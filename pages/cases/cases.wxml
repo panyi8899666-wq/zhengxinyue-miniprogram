@@ -1,0 +1,42 @@
+<view class="container">
+  <text class="eyebrow">WORKS</text>
+  <text class="section-title">作品索引</text>
+  <text class="section-desc">按产出类型筛选，每案含完整设计论证与多视图呈现。</text>
+
+  <scroll-view class="filter-bar" scroll-x="true">
+    <view class="filter-row">
+      <text
+        wx:for="{{filters}}"
+        wx:key="*this"
+        data-filter="{{item}}"
+        bindtap="onFilterTap"
+        class="filter-item {{activeFilter === item ? 'active' : ''}}"
+      >{{item}}</text>
+    </view>
+  </scroll-view>
+
+  <view class="case-list">
+    <view class="case-card" wx:for="{{list}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
+      <block wx:if="{{item.cover}}">
+        <image class="case-cover" src="{{item.cover}}" mode="aspectFill"></image>
+      </block>
+      <block wx:else>
+        <view class="img-placeholder case-cover"><text>{{item.title}}</text></view>
+      </block>
+      <view class="case-meta">
+        <view class="case-top">
+          <text class="case-cat">{{item.category}}</text>
+          <text wx:if="{{item.isReal}}" class="tag-gold">{{item.realTag}}</text>
+        </view>
+        <text class="case-title">{{item.title}}</text>
+        <view class="case-tags">
+          <text class="tag-gray" wx:for="{{item.tags}}" wx:key="*this">{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{list.length === 0}}" class="empty">
+    <text>该类别暂无案例</text>
+  </view>
+</view>

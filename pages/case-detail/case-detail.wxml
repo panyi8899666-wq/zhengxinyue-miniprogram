@@ -1,0 +1,48 @@
+<scroll-view class="container" scroll-y="true">
+  <text class="eyebrow">CASE</text>
+  <text class="detail-cat">{{category}}</text>
+  <text class="detail-title">{{title}}</text>
+
+  <view class="detail-tags">
+    <text class="tag-gray" wx:for="{{tags}}" wx:key="*this">{{item}}</text>
+  </view>
+  <view wx:if="{{isReal}}" class="real-badge">
+    <text class="tag-gold">{{realTag}}</text>
+  </view>
+
+  <!-- 设计论证 -->
+  <view class="card rationale-card">
+    <text class="eyebrow">DESIGN RATIONALE</text>
+    <text class="card-title">设计论证</text>
+    <text class="card-text">{{rationale}}</text>
+  </view>
+
+  <!-- 真实项目交付背景 -->
+  <view wx:if="{{isReal}}" class="card">
+    <text class="card-title">实际交付背景</text>
+    <text class="card-text">{{realBackground}}</text>
+  </view>
+
+  <!-- 6 视图 -->
+  <text class="eyebrow">VIEWS</text>
+  <text class="section-title">多视图呈现</text>
+  <view class="views">
+    <view class="view-item" wx:for="{{views}}" wx:key="label">
+      <text class="view-label">{{item.label}}</text>
+      <block wx:if="{{item.src}}">
+        <image class="view-img" src="{{item.src}}" mode="widthFix" data-src="{{item.src}}" bindtap="previewImage"></image>
+      </block>
+      <block wx:else>
+        <view class="img-placeholder view-img"><text>{{title}} · {{item.label}}</text></view>
+      </block>
+    </view>
+  </view>
+
+  <view class="divider"></view>
+
+  <view class="cta-block">
+    <text class="section-title">想做同类项目？</text>
+    <text class="section-desc">把需求发过来，24 小时内响应。</text>
+    <view class="btn-primary" bindtap="goContact">一键咨询<text class="btn-en">START A BRIEF</text></view>
+  </view>
+</scroll-view>

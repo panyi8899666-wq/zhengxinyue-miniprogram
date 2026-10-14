@@ -1,0 +1,69 @@
+<scroll-view class="container" scroll-y="true">
+  <text class="eyebrow">SERVICES</text>
+  <text class="section-title">设计能力，一眼看全</text>
+  <text class="section-desc">全面且专业：四个类别，一个人对接到底。</text>
+
+  <view class="card" wx:for="{{capabilities}}" wx:key="title">
+    <text class="card-title">{{item.title}}</text>
+    <text class="card-text">{{item.desc}}</text>
+    <view class="cap-tags">
+      <text class="tag-gray" wx:for="{{item.tags}}" wx:key="*this">{{item}}</text>
+    </view>
+  </view>
+
+  <view class="divider"></view>
+
+  <!-- 四步流程 -->
+  <text class="eyebrow">PROCESS</text>
+  <text class="section-title">四步合作流程</text>
+  <view class="steps">
+    <view class="step" wx:for="{{steps}}" wx:key="no">
+      <text class="step-no">{{item.no}}</text>
+      <view class="step-body">
+        <text class="step-title">{{item.title}}</text>
+        <text class="step-desc">{{item.desc}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="divider"></view>
+
+  <!-- 价格 -->
+  <text class="eyebrow">PRICING</text>
+  <text class="section-title">明码标价</text>
+  <view class="card price-card">
+    <view class="price-row">
+      <text class="price-big">{{priceMonthly}}</text>
+      <text class="price-sub">/ {{priceQuarterly}}</text>
+    </view>
+    <text class="price-usd">{{usdNote}}</text>
+    <text class="card-text">设计只做包月制。{{productionNote} }。</text>
+    <text class="card-text dim">包月后你得到：当月全部平面设计需求全包，一人对接，24 小时内响应，修改到满意为止。</text>
+  </view>
+
+  <view class="divider"></view>
+
+  <!-- FAQ -->
+  <text class="eyebrow">FAQ</text>
+  <text class="section-title">先回答你最想问的</text>
+  <view class="faq-list">
+    <view class="faq-item" wx:for="{{faqs}}" wx:key="q">
+      <view class="faq-q" data-idx="{{index}}" bindtap="toggleFaq">
+        <text class="faq-q-text">{{item.q}}</text>
+        <text class="faq-arrow">{{item.open ? '−' : '+'}}</text>
+      </view>
+      <view wx:if="{{item.open}}" class="faq-a">
+        <text>{{item.a}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="divider"></view>
+
+  <view class="cta-block">
+    <text class="section-title">从一次咨询开始</text>
+    <text class="section-desc">把需求发过来，看看包月制合不合适。</text>
+    <view class="btn-primary" bindtap="goContact">一键咨询<text class="btn-en">START A BRIEF</text></view>
+    <view class="btn-outline" bindtap="goCases">先看作品<text class="btn-en">WORKS</text></view>
+  </view>
+</scroll-view>

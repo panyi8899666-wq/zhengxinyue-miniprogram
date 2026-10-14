@@ -1,0 +1,72 @@
+<scroll-view class="container" scroll-y="true">
+  <!-- Hero -->
+  <view class="hero">
+    <text class="eyebrow">{{studioNameEn}}</text>
+    <text class="hero-title">{{studioName}}</text>
+    <view class="status-row">
+      <view class="status-dot"></view>
+      <text class="status-text">{{statusLine}}</text>
+    </view>
+    <text class="hero-slogan">{{heroTitle}}</text>
+    <text class="hero-desc">{{heroDesc}}</text>
+    <view class="hero-cta">
+      <view class="btn-primary" bindtap="goContact">免费咨询<text class="btn-en">FREE CONSULT</text></view>
+      <view class="btn-outline" bindtap="goCases">查看作品<text class="btn-en">WORKS</text></view>
+    </view>
+  </view>
+
+  <view class="divider"></view>
+
+  <!-- 精选案例横滑 -->
+  <view class="section-head">
+    <view>
+      <text class="eyebrow">SELECTED</text>
+      <text class="section-title">精选案例</text>
+    </view>
+    <text class="more-link" bindtap="goCases">全部作品 ›</text>
+  </view>
+  <scroll-view class="featured-scroll" scroll-x="true">
+    <view class="featured-row">
+      <view class="featured-card" wx:for="{{featured}}" wx:key="id" data-id="{{item.id}}" bindtap="goCaseDetail">
+        <block wx:if="{{item.cover}}">
+          <image class="featured-img" src="{{item.cover}}" mode="aspectFill"></image>
+        </block>
+        <block wx:else>
+          <view class="img-placeholder featured-img"><text>{{item.title}}</text></view>
+        </block>
+        <view class="featured-meta">
+          <text class="featured-cat">{{item.category}}</text>
+          <text class="featured-title">{{item.title}}</text>
+          <text wx:if="{{item.isReal}}" class="tag-gold">真实客户项目 · 实际交付</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="divider"></view>
+
+  <!-- 服务入口 -->
+  <view class="card" bindtap="goServices">
+    <text class="eyebrow">SERVICES</text>
+    <text class="section-title">设计能力，一眼看全</text>
+    <text class="section-desc">品牌视觉 / 广告画面 / 包装 / 空间应用，包月制，一人对接到底。</text>
+    <text class="more-link">了解服务与流程 ›</text>
+  </view>
+
+  <!-- 价格预告 -->
+  <view class="card price-card" bindtap="goServices">
+    <text class="eyebrow">PRICING</text>
+    <view class="price-row">
+      <text class="price-big">{{priceMonthly}}</text>
+      <text class="price-usd">≈ USD 690 / MONTH</text>
+    </view>
+    <text class="section-desc">{{priceNote}}</text>
+  </view>
+
+  <!-- 底部 CTA -->
+  <view class="cta-block">
+    <text class="section-title">有个项目想聊聊？</text>
+    <text class="section-desc">点一下，把需求发过来，24 小时内响应。</text>
+    <view class="btn-primary" bindtap="goContact">一键咨询<text class="btn-en">START A BRIEF</text></view>
+  </view>
+</scroll-view>
