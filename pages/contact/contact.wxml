@@ -34,20 +34,20 @@
     </view>
   </view>
 
-  <!-- 微信二维码占位 -->
+  <!-- 微信二维码 -->
   <view class="card">
     <text class="card-title">微信</text>
     <text class="section-desc">扫码添加，注明来意。</text>
-    <view class="img-placeholder qr-box"><text>微信二维码占位&#10;待替换真实二维码</text></view>
+    <image class="qr-box qr-img" src="/assets/qr-wechat.png" mode="aspectFit" show-menu-by-longpress="{{true}}"></image>
   </view>
 
-  <!-- 收款码占位 -->
+  <!-- 收款码 -->
   <view class="card">
     <text class="card-title">收款码</text>
     <text class="section-desc">定金与尾款请备注项目名称。</text>
     <view class="qr-row">
-      <view class="img-placeholder qr-box half"><text>微信收款码&#10;待替换</text></view>
-      <view class="img-placeholder qr-box half"><text>支付宝收款码&#10;待替换</text></view>
+      <image class="qr-box half qr-img" src="/assets/qr-wechatpay.png" mode="aspectFit" show-menu-by-longpress="{{true}}"></image>
+      <image class="qr-box half qr-img" src="/assets/qr-alipay.png" mode="aspectFit" show-menu-by-longpress="{{true}}"></image>
     </view>
   </view>
 

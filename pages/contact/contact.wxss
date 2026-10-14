@@ -51,6 +51,11 @@
   margin-top: 8rpx;
 }
 
+.qr-img {
+  width: 100%;
+  display: block;
+}
+
 .qr-row {
   display: flex;
   flex-direction: row;
