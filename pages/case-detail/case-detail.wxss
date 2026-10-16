@@ -1,4 +1,27 @@
-/* 案例详情 */
+/* 案例详情 · 深色数据风 */
+.data-hero {
+  padding: 40rpx 0 24rpx;
+  border-bottom: 1rpx solid rgba(236, 234, 228, 0.1);
+  margin-bottom: 28rpx;
+}
+
+.data-number {
+  display: block;
+  font-size: 120rpx;
+  font-weight: 800;
+  color: #ECEAE4;
+  letter-spacing: 4rpx;
+  line-height: 1.1;
+}
+
+.data-label {
+  display: block;
+  font-size: 24rpx;
+  color: rgba(236, 234, 228, 0.5);
+  letter-spacing: 4rpx;
+  margin-top: 8rpx;
+}
+
 .detail-cat {
   display: block;
   font-size: 24rpx;
@@ -41,6 +64,52 @@
 
 .rationale-card {
   border-color: rgba(198, 161, 91, 0.35);
+}
+
+/* 数据条 */
+.metrics-block {
+  margin: 32rpx 0;
+  padding: 28rpx;
+  background-color: #141416;
+  border: 1rpx solid rgba(236, 234, 228, 0.1);
+  border-radius: 16rpx;
+}
+
+.metric-row {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.metric-label {
+  width: 180rpx;
+  font-size: 24rpx;
+  color: rgba(236, 234, 228, 0.6);
+  flex-shrink: 0;
+}
+
+.metric-track {
+  flex: 1;
+  height: 16rpx;
+  background-color: rgba(236, 234, 228, 0.12);
+  border-radius: 8rpx;
+  overflow: hidden;
+  margin: 0 16rpx;
+}
+
+.metric-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #C6A15B, #e8c87a);
+  border-radius: 8rpx;
+}
+
+.metric-value {
+  font-size: 24rpx;
+  color: #C6A15B;
+  font-weight: 600;
+  width: 80rpx;
+  text-align: right;
+  flex-shrink: 0;
 }
 
 .views {

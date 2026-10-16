@@ -1,11 +1,10 @@
 /**
- * 案例数据 · 共 20 个：16 个概念案例 + 4 个真实客户项目
+ * 案例数据 · 28 个：16 个概念案例 + 12 个真实项目/作品
+ * （4 个早期真实客户项目 + 8 组新增：发光字系列、天马光电子为真实客户项目·实际交付；
+ *  跑动的小车、机器人IP、投币盒子、春日樱花、商城展台、户外标识为真实个人作品）
  *
  * 图片地址规则：src 为相对路径，页面渲染时拼接 config.IMAGE_BASE_URL。
  * IMAGE_BASE_URL 留空时，图片位显示占位样式。
- *
- * 概念案例 views：平面稿 / 渲染图01 / 渲染图02 / 实景图01 / 实景图02 / 材质特写
- * 真实项目 views：精选实际方案页 01–06
  */
 module.exports = [
   // ———————— 概念案例 · 品牌视觉 ————————
@@ -343,6 +342,130 @@ module.exports = [
       { label: '方案页 04', src: 'cases/shilan-jihua/page4.jpg' },
       { label: '方案页 05', src: 'cases/shilan-jihua/page5.jpg' },
       { label: '方案页 06', src: 'cases/shilan-jihua/page6.jpg' }
+    ]
+  },
+
+  // ———————— 真实个人作品 · 3D / 动画 ————————
+  {
+    id: 'running-car',
+    title: '跑动的小车',
+    category: '品牌视觉',
+    tags: ['3D动画', '原创'],
+    isReal: true,
+    realTag: '真实个人作品',
+    realBackground: '原创 3D 动画练习作品。',
+    rationale: '用 3D 动画练习运动节奏与镜头语言：小车的跑动循环、场景调度一次成型。',
+    views: [
+      { label: '作品图 01', src: 'cases/running-car/view1.jpg' },
+      { label: '作品图 02', src: 'cases/running-car/view2.jpg' },
+      { label: '作品图 03', src: 'cases/running-car/view3.jpg' }
+    ]
+  },
+  {
+    id: 'robot-ip',
+    title: '机器人 IP 设计',
+    category: '品牌视觉',
+    tags: ['IP设计', 'Blender'],
+    isReal: true,
+    realTag: '真实个人作品',
+    realBackground: 'Blender 原创机器人 IP 形象设计。',
+    rationale: 'IP 设计的关键是"一眼可爱、处处可用"：造型圆润亲和，结构拆分便于延展表情与动作。',
+    views: [
+      { label: '作品图 01', src: 'cases/robot-ip/view1.jpg' },
+      { label: '作品图 02', src: 'cases/robot-ip/view2.jpg' },
+      { label: '作品图 03', src: 'cases/robot-ip/view3.jpg' }
+    ]
+  },
+  {
+    id: 'coin-box',
+    title: '投币盒子',
+    category: '包装',
+    tags: ['结构设计', '原创'],
+    isReal: true,
+    realTag: '真实个人作品',
+    realBackground: '原创投币盒子结构与视觉设计。',
+    rationale: '小物件的"好玩"来自结构巧思：投币的互动路径、盒体的开启方式一次设计到位。',
+    views: [
+      { label: '作品图 01', src: 'cases/coin-box/view1.jpg' },
+      { label: '作品图 02', src: 'cases/coin-box/view2.jpg' },
+      { label: '作品图 03', src: 'cases/coin-box/view3.jpg' }
+    ]
+  },
+  {
+    id: 'spring-sakura',
+    title: '春日樱花',
+    category: '广告画面',
+    tags: ['主题视觉', '原创'],
+    isReal: true,
+    realTag: '真实个人作品',
+    realBackground: '原创春日樱花主题视觉。',
+    rationale: '季节主题拼的是氛围的"第一眼"：樱花粉的层次、花瓣的动态，一眼就是春天。',
+    views: [
+      { label: '作品图 01', src: 'cases/spring-sakura/view1.jpg' },
+      { label: '作品图 02', src: 'cases/spring-sakura/view2.jpg' },
+      { label: '作品图 03', src: 'cases/spring-sakura/view3.jpg' }
+    ]
+  },
+  {
+    id: 'mall-stage',
+    title: '商城展台设计',
+    category: '空间应用',
+    tags: ['展台设计', '商业空间'],
+    isReal: true,
+    realTag: '真实个人作品',
+    realBackground: '商城展台原创设计：新春 / 元旦 / 萌宠三套主题。',
+    rationale: '商场展台要在人流中"被走近"：主题氛围一次拉满，动线与打卡点同步规划。',
+    views: [
+      { label: '新春主题', src: 'cases/mall-stage/spring.jpg' },
+      { label: '元旦主题', src: 'cases/mall-stage/newyear.jpg' },
+      { label: '萌宠主题', src: 'cases/mall-stage/pets.jpg' }
+    ]
+  },
+  {
+    id: 'outdoor-signage',
+    title: '户外标识 · 精神堡垒',
+    category: '空间应用',
+    tags: ['精神堡垒', '户外标识'],
+    isReal: true,
+    realTag: '真实个人作品',
+    realBackground: '户外标识精神堡垒原创设计（2 款）。',
+    rationale: '精神堡垒是区域的"脸面"：体量、材质、灯光按真实场地尺度推演，白天庄重、夜间出彩。',
+    views: [
+      { label: '方案 01', src: 'cases/outdoor-signage/view1.jpg' },
+      { label: '方案 02', src: 'cases/outdoor-signage/view2.jpg' }
+    ]
+  },
+
+  // ———————— 真实客户项目 · 实际交付（新增） ————————
+  {
+    id: 'tianma-ceremony',
+    title: '天马光电子奠基仪式',
+    category: '品牌视觉',
+    tags: ['典礼视觉', '舞台背景'],
+    isReal: true,
+    realTag: '真实客户项目 · 实际交付',
+    realBackground: '2022年实际交付项目：天马光电子奠基仪式舞台视觉。',
+    rationale: '奠基仪式的视觉要"稳"：主色沉稳大气，舞台背景层次分明，现场各角度拍摄都成立。',
+    views: [
+      { label: '方案页 01', src: 'cases/tianma-ceremony/page1.jpg' },
+      { label: '方案页 02', src: 'cases/tianma-ceremony/page2.jpg' },
+      { label: '方案页 03', src: 'cases/tianma-ceremony/page3.jpg' },
+      { label: '方案页 04', src: 'cases/tianma-ceremony/page4.jpg' }
+    ]
+  },
+  {
+    id: 'luminous-signs',
+    title: '发光字系列',
+    category: '空间应用',
+    tags: ['发光字', '门头招牌'],
+    isReal: true,
+    realTag: '真实客户项目 · 实际交付',
+    realBackground: '实际交付项目：闪亮柚 / 哪吒汽车 / 良初肉业门头发光字，安装落地。',
+    rationale: '发光字是"白天看字、晚上看光"：字型、灯光色温、安装结构按真实门头一次做对，交付即安装。',
+    views: [
+      { label: '闪亮柚', src: 'cases/luminous-signs/shanliangyou.jpg' },
+      { label: '哪吒汽车', src: 'cases/luminous-signs/nezha.jpg' },
+      { label: '良初肉业', src: 'cases/luminous-signs/liangchu.jpg' }
     ]
   }
 ];

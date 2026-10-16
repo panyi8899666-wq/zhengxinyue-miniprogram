@@ -12,9 +12,8 @@ module.exports = {
 
   CONTACT: {
     bizEmail: '784005231@qq.com', // 商务合作
-    dailyEmail: 'panyi8899666@gmail.com', // 日常联系
-    phone: '(+86)17306983179',
-    phoneRaw: '17306983179'
+    dailyEmail: 'panyi8899666@gmail.com' // 日常联系
+    // 注：过审要求，联系页仅展示邮箱，不放电话与二维码
   },
 
   PRICE: {

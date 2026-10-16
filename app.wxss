@@ -4,7 +4,7 @@ page {
   color: #ECEAE4;
   font-size: 28rpx;
   line-height: 1.7;
-  font-family: -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  font-family: 'Microsoft YaHei', '微软雅黑', -apple-system, 'PingFang SC', 'Hiragino Sans GB', sans-serif;
 }
 
 view, text, scroll-view, swiper, image {

@@ -1,27 +1,30 @@
 <scroll-view class="container" scroll-y="true">
-  <!-- Hero -->
+  <!-- Hero：居中大标题 -->
   <view class="hero">
-    <text class="eyebrow">{{studioNameEn}}</text>
-    <text class="hero-title">{{studioName}}</text>
+    <text class="hero-kicker">正鑫越文化传播个人工作室</text>
+    <text class="hero-kicker-en">ZHENGXINYUE CULTURE STUDIO</text>
+    <view class="hero-title-block">
+      <text class="hero-line1">设计不只<text class="gold">好看</text></text>
+      <text class="hero-line2">更要让品牌<text class="gold">被记住</text></text>
+    </view>
+    <text class="hero-en">SELECTED WORK ACROSS BRAND SYSTEMS, CAMPAIGNS, PACKAGING AND SPATIAL DESIGN — SHAPED FOR CLARITY, CONSISTENCY AND REAL PRODUCTION.</text>
+    <text class="hero-desc">从品牌视觉、广告主画面到包装与空间应用，包月制合作，一个人对接到底。</text>
+    <view class="hero-cta">
+      <view class="btn-primary" bindtap="goContact">立即开始设计<text class="btn-en">START NOW</text></view>
+    </view>
     <view class="status-row">
       <view class="status-dot"></view>
       <text class="status-text">{{statusLine}}</text>
-    </view>
-    <text class="hero-slogan">{{heroTitle}}</text>
-    <text class="hero-desc">{{heroDesc}}</text>
-    <view class="hero-cta">
-      <view class="btn-primary" bindtap="goContact">免费咨询<text class="btn-en">FREE CONSULT</text></view>
-      <view class="btn-outline" bindtap="goCases">查看作品<text class="btn-en">WORKS</text></view>
     </view>
   </view>
 
   <view class="divider"></view>
 
-  <!-- 精选案例横滑 -->
+  <!-- 精选案例 -->
   <view class="section-head">
     <view>
-      <text class="eyebrow">SELECTED</text>
       <text class="section-title">精选案例</text>
+      <text class="section-en">FEATURED WORKS</text>
     </view>
     <text class="more-link" bindtap="goCases">全部作品 ›</text>
   </view>
@@ -32,41 +35,81 @@
           <image class="featured-img" src="{{item.cover}}" mode="aspectFill"></image>
         </block>
         <block wx:else>
-          <view class="img-placeholder featured-img"><text>{{item.title}}</text></view>
+          <view class="img-placeholder featured-img"><text>精选案例</text></view>
         </block>
-        <view class="featured-meta">
-          <text class="featured-cat">{{item.category}}</text>
-          <text class="featured-title">{{item.title}}</text>
-          <text wx:if="{{item.isReal}}" class="tag-gold">真实客户项目 · 实际交付</text>
-        </view>
+        <text wx:if="{{item.isReal}}" class="tag-gold card-tag">{{item.realTag}}</text>
       </view>
     </view>
   </scroll-view>
+  <text class="section-tip">左右滑动查看 · 点击进入详情</text>
 
   <view class="divider"></view>
 
-  <!-- 服务入口 -->
-  <view class="card" bindtap="goServices">
-    <text class="eyebrow">SERVICES</text>
-    <text class="section-title">设计能力，一眼看全</text>
-    <text class="section-desc">品牌视觉 / 广告画面 / 包装 / 空间应用，包月制，一人对接到底。</text>
-    <text class="more-link">了解服务与流程 ›</text>
+  <!-- 从策略到落地 -->
+  <view class="strategy-block">
+    <text class="section-title">从策略到落地</text>
+    <text class="section-en">FROM STRATEGY TO DELIVERY</text>
+    <text class="strategy-desc">持续补齐你的设计执行力：从设计判断、系统延展到真实交付，完整呈现。</text>
+    <view class="strategy-points">
+      <view class="strategy-point" wx:for="{{strategyPoints}}" wx:key="title">
+        <text class="strategy-point-title">{{item.title}}</text>
+        <text class="strategy-point-desc">{{item.desc}}</text>
+      </view>
+    </view>
   </view>
+
+  <view class="divider"></view>
+
+  <!-- 服务能力 -->
+  <view class="section-head">
+    <view>
+      <text class="section-title">服务能力</text>
+      <text class="section-en">SERVICES</text>
+    </view>
+    <text class="more-link" bindtap="goServices">了解更多 ›</text>
+  </view>
+  <view class="service-list">
+    <view class="service-item" wx:for="{{services}}" wx:key="title">
+      <text class="service-title">{{item.title}}</text>
+      <text class="service-desc">{{item.desc}}</text>
+    </view>
+  </view>
+
+  <view class="divider"></view>
+
+  <!-- 关于：时间轴 -->
+  <text class="section-title">十余年，从一线到经营</text>
+  <text class="section-en">ABOUT</text>
+  <text class="about-quote">从一线广告设计，到设计总监、生产负责人，再到副总经理；懂设计，更懂生产落地。</text>
+  <view class="timeline">
+    <view class="timeline-item" wx:for="{{timeline}}" wx:key="period">
+      <view class="timeline-dot"></view>
+      <view class="timeline-body">
+        <text class="timeline-period">{{item.period}}</text>
+        <text class="timeline-role">{{item.role}}</text>
+        <text class="timeline-desc">{{item.desc}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="divider"></view>
 
   <!-- 价格预告 -->
   <view class="card price-card" bindtap="goServices">
-    <text class="eyebrow">PRICING</text>
+    <text class="section-title">包月合作</text>
+    <text class="section-en">PRICING</text>
     <view class="price-row">
       <text class="price-big">{{priceMonthly}}</text>
       <text class="price-usd">≈ USD 690 / MONTH</text>
     </view>
     <text class="section-desc">{{priceNote}}</text>
+    <text class="more-link">了解合作方式 ›</text>
   </view>
 
   <!-- 底部 CTA -->
   <view class="cta-block">
     <text class="section-title">有个项目想聊聊？</text>
     <text class="section-desc">点一下，把需求发过来，24 小时内响应。</text>
-    <view class="btn-primary" bindtap="goContact">一键咨询<text class="btn-en">START A BRIEF</text></view>
+    <view class="btn-primary" bindtap="goContact">立即开始设计<text class="btn-en">START NOW</text></view>
   </view>
 </scroll-view>

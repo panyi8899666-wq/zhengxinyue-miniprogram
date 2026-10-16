@@ -1,5 +1,10 @@
 <scroll-view class="container" scroll-y="true">
-  <text class="eyebrow">CASE</text>
+  <!-- 深色数据风头图 -->
+  <view class="data-hero">
+    <text class="data-number">{{dataNumber}}</text>
+    <text class="data-label">{{dataLabel}}</text>
+  </view>
+
   <text class="detail-cat">{{category}}</text>
   <text class="detail-title">{{title}}</text>
 
@@ -12,7 +17,6 @@
 
   <!-- 设计论证 -->
   <view class="card rationale-card">
-    <text class="eyebrow">DESIGN RATIONALE</text>
     <text class="card-title">设计论证</text>
     <text class="card-text">{{rationale}}</text>
   </view>
@@ -23,9 +27,22 @@
     <text class="card-text">{{realBackground}}</text>
   </view>
 
-  <!-- 6 视图 -->
-  <text class="eyebrow">VIEWS</text>
+  <!-- 数据条 -->
+  <view wx:if="{{metrics.length > 0}}" class="metrics-block">
+    <text class="section-title">关键数据</text>
+    <text class="section-en">KEY METRICS</text>
+    <view class="metric-row" wx:for="{{metrics}}" wx:key="label">
+      <text class="metric-label">{{item.label}}</text>
+      <view class="metric-track">
+        <view class="metric-fill" style="width: {{item.value}}%"></view>
+      </view>
+      <text class="metric-value">{{item.value}}%</text>
+    </view>
+  </view>
+
+  <!-- 视图 -->
   <text class="section-title">多视图呈现</text>
+  <text class="section-en">VIEWS</text>
   <view class="views">
     <view class="view-item" wx:for="{{views}}" wx:key="label">
       <text class="view-label">{{item.label}}</text>
@@ -43,6 +60,6 @@
   <view class="cta-block">
     <text class="section-title">想做同类项目？</text>
     <text class="section-desc">把需求发过来，24 小时内响应。</text>
-    <view class="btn-primary" bindtap="goContact">一键咨询<text class="btn-en">START A BRIEF</text></view>
+    <view class="btn-primary" bindtap="goContact">立即开始设计<text class="btn-en">START NOW</text></view>
   </view>
 </scroll-view>

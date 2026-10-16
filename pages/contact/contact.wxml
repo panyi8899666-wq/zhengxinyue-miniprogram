@@ -1,7 +1,7 @@
 <scroll-view class="container" scroll-y="true">
-  <text class="eyebrow">CONTACT</text>
   <text class="section-title">联系与咨询</text>
-  <text class="section-desc">三种方式，总有一种顺手。咨询 24 小时内响应。</text>
+  <text class="section-en">CONTACT</text>
+  <text class="section-desc">邮件联系，24 小时内响应。</text>
 
   <!-- 邮箱 -->
   <view class="card">
@@ -22,41 +22,12 @@
     </view>
   </view>
 
-  <!-- 电话 -->
-  <view class="card">
-    <text class="card-title">电话</text>
-    <view class="contact-row">
-      <view class="contact-info">
-        <text class="contact-value">{{phone}}</text>
-        <text class="contact-label">工作时间直接拨打</text>
-      </view>
-      <text class="copy-btn gold" bindtap="callPhone">拨打</text>
-    </view>
-  </view>
-
-  <!-- 微信二维码 -->
-  <view class="card">
-    <text class="card-title">微信</text>
-    <text class="section-desc">扫码添加，注明来意。</text>
-    <image class="qr-box qr-img" src="/assets/qr-wechat.png" mode="aspectFit" show-menu-by-longpress="{{true}}"></image>
-  </view>
-
-  <!-- 收款码 -->
-  <view class="card">
-    <text class="card-title">收款码</text>
-    <text class="section-desc">定金与尾款请备注项目名称。</text>
-    <view class="qr-row">
-      <image class="qr-box half qr-img" src="/assets/qr-wechatpay.png" mode="aspectFit" show-menu-by-longpress="{{true}}"></image>
-      <image class="qr-box half qr-img" src="/assets/qr-alipay.png" mode="aspectFit" show-menu-by-longpress="{{true}}"></image>
-    </view>
-  </view>
-
   <view class="divider"></view>
 
   <!-- 一键咨询简化表单 -->
-  <text class="eyebrow">QUICK BRIEF</text>
   <text class="section-title">一键咨询</text>
-  <text class="section-desc">填四项，生成结构化需求单，复制发微信即可。</text>
+  <text class="section-en">QUICK BRIEF</text>
+  <text class="section-desc">填四项，生成结构化需求单，复制发邮件即可。</text>
 
   <view class="card">
     <text class="form-label">项目类型</text>
@@ -82,6 +53,6 @@
   <view wx:if="{{showBrief}}" class="card brief-card">
     <text class="card-title">你的需求单</text>
     <text class="brief-text">{{briefText}}</text>
-    <view class="btn-outline" data-text="{{briefText}}" bindtap="copyText" data-label="需求单">复制需求单，发微信<text class="btn-en">COPY</text></view>
+    <view class="btn-outline" data-text="{{briefText}}" bindtap="copyText" data-label="需求单">复制需求单，发邮件<text class="btn-en">COPY</text></view>
   </view>
 </scroll-view>

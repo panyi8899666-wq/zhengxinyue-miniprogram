@@ -4,8 +4,6 @@ Page({
 data: {
 bizEmail: config.CONTACT.bizEmail,
 dailyEmail: config.CONTACT.dailyEmail,
-phone: config.CONTACT.phone,
-phoneRaw: config.CONTACT.phoneRaw,
 types: ['品牌视觉', '广告画面', '包装', '空间应用'],
 typeIndex: 0,
 content: '',
@@ -22,10 +20,6 @@ wx.setClipboardData({
 data: text,
 success: () => wx.showToast({ title: label + '已复制', icon: 'success'})
 });
-},
-
-callPhone() {
-wx.makePhoneCall({ phoneNumber: this.data.phoneRaw});
 },
 
 onTypeChange(e) {

@@ -1,4 +1,4 @@
-/* 作品索引 */
+/* 作品索引 · 纯图卡片 */
 .filter-bar {
   width: 100%;
   margin: 0 -32rpx 28rpx;
@@ -27,42 +27,32 @@
   font-weight: 600;
 }
 
+.case-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .case-card {
-  background-color: #141416;
-  border: 1rpx solid rgba(236, 234, 228, 0.1);
-  border-radius: 16rpx;
+  width: 48.5%;
+  border-radius: 12rpx;
   overflow: hidden;
-  margin-bottom: 28rpx;
+  margin-bottom: 20rpx;
+  position: relative;
 }
 
 .case-cover {
   width: 100%;
-  height: 380rpx;
+  height: 280rpx;
+  border-radius: 12rpx;
 }
 
-.case-meta {
-  padding: 24rpx 28rpx 28rpx;
-}
-
-.case-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10rpx;
-}
-
-.case-cat {
-  font-size: 22rpx;
-  color: #C6A15B;
-  letter-spacing: 3rpx;
-}
-
-.case-title {
-  display: block;
-  font-size: 34rpx;
-  font-weight: 600;
-  color: #ECEAE4;
-  margin-bottom: 14rpx;
+.card-tag {
+  position: absolute;
+  left: 12rpx;
+  bottom: 12rpx;
+  font-size: 20rpx;
 }
 
 .empty {
